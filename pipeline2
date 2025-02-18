@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    
+    stages{
+
+
+        stage('Making Html report'){
+            steps{
+                echo 'Executing...'
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'Home.html', reportName: 'HTML Report', reportTitles: 'Home page', useWrapperFileDirectly: true])
+
+            }
+        }
+    }
+    
+}
